@@ -1,6 +1,15 @@
 default_environment: dev
-project_id: 01a0e243-9437-78bf-a852-50e6f4d089e4
+project_id: 01a0e2aa-472f-7457-873c-1442b2ca24e3
 environments:
 - name: dev
 - name: staging
 - name: prod
+plugins:
+  utilities:
+  - name: fetch-trip-data
+    namespace: fetch_trip_data
+    pip_url: python-dotenv>=1.2.3 requests>=2.34.2
+    commands:
+      run:
+        executable: python
+        args: scripts/fetch_trip_data.py

@@ -1,5 +1,5 @@
 [project]
-name = "spatial-graphql-sandbox"
+name = "city-bike-sandbox"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -7,7 +7,7 @@ requires-python = ">=3.12"
 dependencies = []
 
 [project.scripts]
-spatial-graphql-sandbox = "spatial_graphql_sandbox:main"
+city-bike-sandbox = "city_bike_sandbox:main"
 
 [build-system]
 requires = ["uv_build>=0.12.17,<0.13.0"]
@@ -15,5 +15,6 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "cookiecutter>=2.7.1",
     "meltano>=4.3.0",
 ]

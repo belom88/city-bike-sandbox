@@ -6,7 +6,7 @@ This sandbox application is focused on the backend serving [City Bike System](ht
 
 The data ingestion is implemented with Meltano ELT tool.
 
-### Projection initialization steps
+### Ingestion initialization steps
 
 Don't run these commands. This is how the meltano project has been initialized.
 
@@ -22,6 +22,11 @@ Note! Non documented capability. To avoid global Meltano installation, used non 
 
 ```powershell
   uv add --dev meltano
+```
+
+Cookiecutter is used to create custom extractors:
+```powershell
+  uv add --dev cookiecutter
 ```
 
 Initialize meltano project
