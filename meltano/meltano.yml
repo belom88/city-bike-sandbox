@@ -5,11 +5,25 @@ environments:
 - name: staging
 - name: prod
 plugins:
+  extractors:
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      files:
+      - entity: trip_data_raw
+        path: ${MELTANO_DATA_PATH}/202608-citibike-tripdata
+        keys:
+          - ride_id
+  loaders:
+  - name: target-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-target-postgres
   utilities:
   - name: fetch-trip-data
     namespace: fetch_trip_data
     pip_url: python-dotenv>=1.2.3 requests>=2.34.2
     commands:
       run:
-        executable: python
         args: scripts/fetch_trip_data.py
+        executable: python
